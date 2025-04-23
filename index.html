@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Habit-Hero Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Hero Banner -->
+    <header class="hero-banner">
+        <div class="hero-content">
+            <h1>Hello, Hero!</h1>
+            <p class="date" id="current-date"></p>
+            <div class="sun-icon">
+                <i class="fas fa-sun"></i>
+            </div>
+        </div>
+        <div id="particles"></div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Left Column - Habits Panel -->
+        <section class="habits-panel">
+            <h2>Your Habits</h2>
+            <div class="habits-grid" id="habits-container">
+                <!-- Habit cards will be dynamically added here -->
+            </div>
+        </section>
+
+        <!-- Right Column -->
+        <section class="right-column">
+            <!-- Today's Snapshot -->
+            <div class="snapshot">
+                <h2>Today's Snapshot</h2>
+                <div class="streak-summary">
+                    <div class="circular-dial">
+                        <div class="dial-progress">
+                            <span class="progress-text">2 / 5</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="milestone-badges">
+                    <!-- Badges will be dynamically added here -->
+                </div>
+            </div>
+
+            <!-- Leaderboard -->
+            <div class="leaderboard">
+                <h2>Top Heroes</h2>
+                <div class="heroes-carousel">
+                    <!-- Leaderboard items will be dynamically added here -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Quick Add Button -->
+    <button class="quick-add-btn" id="quick-add">
+        <i class="fas fa-plus"></i>
+    </button>
+
+    <!-- Add/Edit Habit Panel -->
+    <div class="slide-in-panel" id="habit-panel">
+        <div class="panel-content">
+            <div class="panel-header">
+                <h2>Add New Habit</h2>
+                <button class="close-btn" id="close-panel">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <form id="habit-form">
+                <div class="form-group">
+                    <label for="habit-title">Habit Title</label>
+                    <input type="text" id="habit-title" placeholder="e.g. Study about Node.js">
+                </div>
+                <div class="form-group">
+                    <label for="habit-frequency">Frequency (days/week)</label>
+                    <div class="frequency-stepper">
+                        <button type="button" class="stepper-btn" id="decrease-freq">-</button>
+                        <input type="number" id="habit-frequency" min="1" max="7" value="3">
+                        <button type="button" class="stepper-btn" id="increase-freq">+</button>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="habit-color">Color</label>
+                    <input type="color" id="habit-color" value="#FFB6C1">
+                </div>
+                <button type="submit" class="save-btn">Save Habit</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Toast Notifications -->
+    <div class="toast-container" id="toast-container"></div>
+    <script src="script.js"></script>
+</body>
+</html> 
